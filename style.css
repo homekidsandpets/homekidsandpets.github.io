@@ -1,0 +1,431 @@
+/*
+
+font-family: 'Pangolin', cursive;
+font-family: 'Roboto', sans-serif;
+
+*/
+
+/*Start global*/
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 10px;
+	font-family: 'Roboto', sans-serif;
+}
+
+section{
+	padding: 6rem 0;
+}
+
+a{
+	text-decoration: none;
+	color: #eee;
+}
+
+p{
+	font-size: 1.5rem;
+	font-weight: 300;
+}
+
+img{
+	width: 100%;
+}
+/*End global*/
+
+/*Start reusable*/
+.container{
+	width: 90%;
+	max-width: 120rem;
+	height: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+.section-heading{
+	text-align: center;
+	margin: 5rem;
+}
+
+.section-heading h2{
+	font-family: 'Pangolin', cursive;
+	font-size: 3.5rem;
+	color: #2980b9;
+	text-transform: uppercase;
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.section-heading h2::before,
+.section-heading h2::after{
+	content: '';
+	position: absolute;
+	bottom: -.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #2980b9;
+	background-color: #2980b9;
+}
+
+.section-heading h2::before{
+	width: 10rem;
+	height: 3px;
+	border-radius: .8rem;
+}
+
+.section-heading h2::after{
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 100%;
+	bottom: -1rem;
+}
+
+.section-heading h6{
+	font-size: 1.6rem;
+	font-weight: 300;
+}
+
+.has-margin-right{
+	margin-right: 5rem;
+}
+
+/*End reusable*/
+
+/*Start header*/
+header{
+	width: 100%;
+	height: 100vh;
+	background: url("images/fondo-home-kids-and-pets.jpg") no-repeat center fixed;
+	background-size: cover;
+}
+
+.top-nav{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: -100vh;
+	z-index: 50;
+	background-color: #16162d;
+	border-bottom-right-radius: 100%;
+	border-bottom-left-radius: 100%;
+	transition: all 650ms cubic-bezier(1,0,0,1);
+}
+
+.nav-list{
+	list-style: none;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+li{
+	margin: 0 2rem;
+}
+
+.nav-link{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	font-size: 2.5rem;
+	padding: 1rem;
+}
+
+.nav-link:hover,
+.nav-link:focus{
+	background: linear-gradient(to top, #ffe838, #fd57bf);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.top-nav.open{
+	top: 0;
+	border-radius: initial;
+}
+
+.menu-toggler{
+	position: fixed;
+	top: 5rem;
+	right: 5rem;
+	width: 5rem;
+	height: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	cursor: pointer;
+	z-index: 1500;
+	transition: transform 650ms ease-out;
+}
+
+.menu-toggler.open{
+	transform: rotate(-45deg);
+}
+
+.bar{
+	background: linear-gradient(to right, #fff, #9B9B9B);
+	width: 100%;
+	height: 4px;
+	border-radius: .8rem;
+}
+
+.bar.half{
+	width: 50%;
+}
+
+.bar.start{
+	transform-origin: right;
+	transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.start{
+	transform: rotate(-450deg) translateX(.8rem);
+}
+
+.bar.end{
+	align-self: flex-end;
+	transform-origin: left;
+	transition: transform 650ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+}
+
+.open .bar.end{
+	transform: rotate(-450deg) translateX(-.8rem);
+}
+/*End header*/
+
+/*Start home*/
+.landing-text{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	text-align: center;
+	z-index: 1;
+}
+
+.landing-text img{
+	width: 65%;
+}
+/*End home*/
+
+/*Start about*/
+.about .container{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.about-heading{
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 0;
+	margin-top: 1.5rem;
+	margin-bottom: 6rem;
+}
+
+.about-heading h2{
+	font-family: 'Pangolin', cursive;
+	font-size: 8rem;
+	opacity: .3;
+	color: #2980b9;
+}
+
+.about-heading h6{
+	font-family: 'Pangolin', cursive;
+	font-size: 2rem;
+	font-weight: 300;
+}
+
+p.lect{
+	padding: 2rem;
+	text-align: justify;
+}
+
+.profile-img{
+	flex: 1;
+	width: 75%;
+	margin-right: 5rem;
+}
+
+.about-details{
+	flex: 1;
+}
+
+.social-media{
+	margin-top: 3rem;
+}
+
+.social-media i{
+	font-size: 5rem;
+}
+
+.fa-facebook-square{color:#4267b2;}
+.fa-instagram{color:#E23E6C;}
+
+.fa-facebook-square:hover,
+.fa-instagram:hover{
+	opacity: .5;
+}
+/*End about*/
+
+/*Start services*/
+.my-skills{
+	margin-top: 10rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+	grid-cap: 2.5rem;
+	text-align: center;
+}
+
+.skill{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 2rem;
+}
+
+.skill h3{
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 2rem -2px 2rem 0;
+	color: #2980b9;
+	font-family: 'Pangolin', cursive;
+	font-size: 2rem;
+}
+
+.icon-container{
+	width: 10rem;
+	height: 10rem;
+	border: 3px solid #2980b9;
+	background-color: transparent;
+	margin-bottom: 2rem;
+	display: flex;
+	transform: rotate(45deg);
+	opacity: 0.8;
+}
+
+.icon-container i{
+	color: #2980b9;
+	font-size: 5rem;
+	margin: auto;
+	transform: rotate(-45deg);
+}
+/*End services*/
+
+/*Start portfolio*/
+.portfolio-item{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+
+.portfolio-item:last-child{
+	margin-bottom: 0;
+}
+
+.portfolio-img{
+	flex: 1;
+}
+
+.portfolio-description{
+	flex: 1;
+}
+
+.portfolio-description h4{
+	font-family: 'Pangolin', cursive;
+	font-size: 3rem;
+	opacity: 0.8;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	color: #2980b9;
+}
+
+.portfolio-description h6{
+	font-size: 1.5rem;
+	text-transform: uppercase;
+}
+/*End services*/
+
+/*Start footer*/
+.copyright{
+	width: 100%;
+	text-align: center;
+	background-color: #2980b9;
+	padding: 2rem 0;
+	position: relative;
+	color: #fff;
+}
+
+.copyright p{
+	font-size: 1.4rem;
+}
+/*End footer*/
+
+/*Start media queries -> 768px*/
+@media screen and (max-width: 768px){
+	.landing-text img{ width: 100%;}
+	.nav-list{flex-direction: column;}
+	.li{margin:2rem 0;}
+	.nav-link{font-size: 3.5rem;}
+	.about-heading h2{font-size: 8rem;}
+	.section-heading h2{font-size: 3rem;}
+	.about-details .nav-list{flex-direction: initial;}
+	.about-details li{margin:0 2rem;}
+	.social-media{margin-top: 1rem;}	
+	.icon-container{
+		width: 7rem;
+		height: 7rem;
+	}
+	.icon-container i{font-size: 4rem;}
+
+}
+/*End media queries*/
+
+/*Start media queries -> 600px*/
+@media only screen and (max-width: 600px) {
+	
+	section {
+    	padding: 3rem 0;
+	}
+
+	.menu-toggler{
+		top: 2rem;
+		right: 2rem
+	}
+
+	.nav-link{font-size: 2.5rem;}
+	.about .container,
+	.portfolio-item{
+		flex-direction: column;
+	}
+
+	.about-heading{ margin-bottom: 2rem;}
+	.social-media i{ font-size: 3rem; }
+
+	.my-skills{
+		margin-top: 2rem;
+	}
+
+	.about-heading h2{ font-size: 5rem; }
+	.about-heading h6{ font-size: 2rem; }
+	p.lect{text-align: center;}
+	.section-heading h2 {font-size: 2.5rem;}
+	.section-heading h6 {font-size: 1.6rem;}
+	.profile-img{margin: 0 0 7rem 0; width: 90%;}
+	#servicios{ margin: 2rem;}
+	.portfolio-img{
+		margin: 0 0 2rem 0;
+		order: 1;
+	}
+	.portfolio-description{
+		margin: 0;
+		order: 2;
+	}
+}
+/*End media queries*/
